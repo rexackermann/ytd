@@ -29,24 +29,23 @@ p1=subprocess.run(["yt-dlp","-F",l.link],capture_output=True)
 
 print(bcolors.BOLD + bcolors.C + p1.stdout.decode() + bcolors.ENDC)
 
-print(bcolors.RED + "Just Press Enter 4OUR Times To Proceed With 1080p Video With Audio To The Videos Folder !!! \n")
+print(bcolors.RED + "Just Press Enter " + bcolors.C + "4OUR" + bcolors.ENDC + " Times To Proceed With 1080p Video With Audio To The Videos Folder !!! \n")
 
 res=input(bcolors.BLUE + "Just Enter prefered resulution [Exampes: 480 ,720 ,1080 etc. Or Just Press Enter To Enter Video and Audio ID Manually !!!]: " + "\n")
 if str(res) == "":
 	v=input("Video ID: " + "\n")
+		if v == "":
+			v=137
 	a=input("Audio ID: " + "\n")
+		if a == "":
+			a=251
 else:
 	v=""
 	a=""
 
 p=input("Download Path : " + "\n\n")
-
 if p == "":
 	p="~/Videos"
-if v == "":
-	v=137
-if a == "":
-	a=251
 
 f="-f " + str(v)+"  +  "+str(a)
 F=str(v)+"  +  "+str(a)
